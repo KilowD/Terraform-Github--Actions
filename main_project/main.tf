@@ -22,7 +22,6 @@ terraform {
   }
 }
 
-
 # Authenticate Azure
 # the feature block allows the behaviour of each resource to be configured individually
 provider "azurerm" {
