@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 3.19.1" //2.65
     }
+    azuread   = {
+      source = "hashicorp/azuread"
+      version = ">= 1.0"
+    }
   }
 }
 
@@ -38,7 +42,12 @@ provider "azurerm" {
             }     
    }
 }
-
+provider "azuread" {
+   subscription_id  = "${var.subscription_id}"
+   client_id        = "${var.client_id}"
+   client_secret    = "${var.client_secret}"
+   tenant_id        = "${var.tenant_id}"
+}
 # on the left put  the variables exactly the  way they are defined in their modules
 # the values come from the variables and the tfvars in this main 
 module "rg" {
