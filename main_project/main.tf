@@ -13,7 +13,7 @@ terraform {
   backend "azurerm" {
     resource_group_name             = "pams"
     storage_account_name            = "storage4learn4terraform"
-    container_name                  = "tfstatefile"
+    container_name                  = "tfstatefile" 
     key                             = "dev.terraform.tfstate"
   }
 }
