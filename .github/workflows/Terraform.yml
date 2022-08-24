@@ -6,6 +6,11 @@ on:
     - "main"
   pull_request:
 
+env:
+   AZURE_SUBSCRIPTION_ID          = ${{secrets.AZURE_SUBSCRIPTION_ID}}
+   AZURE_AD_CLIENT_ID             = ${{secrets.AZURE_AD_CLIENT_ID}}
+   AZURE_AD_CLIENT_SECRET         = ${{secrets.AZURE_AD_CLIENT_SECRET}}
+   AZURE_AD_TENANT_ID             = ${{secrets.AZURE_AD_TENANT_ID}}
 
 jobs:
   terraform:
@@ -32,10 +37,6 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
-
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
