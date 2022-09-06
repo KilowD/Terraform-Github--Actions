@@ -22,7 +22,7 @@ terraform {
   }
 }
 
-# Authenticate Azure
+# Authenticate Azure using azure service principal details
 # the feature block allows the behaviour of each resource to be configured individually
 provider "azurerm" {
    subscription_id  = "${var.subscription_id}"
