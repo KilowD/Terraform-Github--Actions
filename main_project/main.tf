@@ -23,6 +23,7 @@ terraform {
 }
 
 # Authenticate Azure using azure service principal details
+# make sure u assign the the service principal (contributor role) access to the subsscription in azure
 # the feature block allows the behaviour of each resource to be configured individually
 provider "azurerm" {
    subscription_id  = "${var.subscription_id}"
